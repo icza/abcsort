@@ -1,9 +1,24 @@
 package abcsort
 
 import (
+	"fmt"
 	"reflect"
+	"sort"
 	"testing"
 )
+
+func ExampleLess() {
+	weights := Weights("bac")
+
+	ss := []string{"abc", "bac", "cba", "CCC"}
+	sort.Slice(ss, func(i int, j int) bool {
+		return Less(ss[i], ss[j], weights)
+	})
+	fmt.Println(ss)
+
+	// Output:
+	// [CCC bac abc cba]
+}
 
 func TestWeights_WeightsFold(t *testing.T) {
 	cases := []struct {
