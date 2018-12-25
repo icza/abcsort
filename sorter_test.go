@@ -19,3 +19,23 @@ func ExampleStringSlice() {
 	// Output:
 	// [CCC bac abc cba]
 }
+
+func ExampleStringFoldSlice() {
+	ss := []string{"bármi", "Áron", "áram"}
+	sort.Strings(ss)
+	fmt.Println(ss)
+
+	weights := WeightsFold("aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz")
+
+	ss = []string{"bármi", "Áron", "áram"}
+	strslice := &StringFoldSlice{
+		Weights: weights,
+		Slice:   ss,
+	}
+	sort.Sort(strslice)
+	fmt.Println(ss)
+
+	// Output:
+	// [bármi Áron áram]
+	// [áram Áron bármi]
+}
