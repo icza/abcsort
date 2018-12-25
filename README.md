@@ -10,7 +10,7 @@ Go string sorting library that uses a custom, user-defined alphabet.
 Implementation does not convert the input strings into byte or rune slices, so
 performance is rather good.
 
-Custom sorting can be easiest achieved by using the Sorter helper type, for example:
+Custom sorting can be easiest achieved by using the `Sorter` helper type, for example:
 
 	sorter := abcsort.New("bac")
 
