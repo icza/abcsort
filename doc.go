@@ -22,5 +22,20 @@ package is also exposed, and may be used "manually" like this:
 	// Output:
 	// [CCC bac abc cba]
 
+Or via the StringSlice type:
+
+	weights := Weights("bac")
+
+	ss := []string{"abc", "bac", "cba", "CCC"}
+	strslice := &StringSlice{
+		Weights: weights,
+		Slice:   ss,
+	}
+	sort.Sort(strslice)
+	fmt.Println(ss)
+
+	// Output:
+	// [CCC bac abc cba]
+
 */
 package abcsort
