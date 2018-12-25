@@ -223,31 +223,37 @@ func TestLess_LessFold(t *testing.T) {
 }
 
 func TestLessFold_2(t *testing.T) {
-	const alphabet = "bCa"
-	weights := Weights(alphabet)
-	weightsFold := WeightsFold(alphabet)
-
 	cases := []struct {
 		title          string
+		alphabet       string
 		s1, s2         string
 		less, lessFold bool
 	}{
 		{
-			title: `"cb" < "Ca"`,
-			s1:    "cb", s2: "Ca",
+			title:    `"cb" < "Ca"`,
+			alphabet: "bCa",
+			s1:       "cb", s2: "Ca",
+			less: false, lessFold: true,
+		},
+		{
+			title:    `"bca" < "abc"`,
+			alphabet: "BCA",
+			s1:       "bca", s2: "abc",
 			less: false, lessFold: true,
 		},
 	}
 
 	for _, c := range cases {
+		weights := Weights(c.alphabet)
 		less := Less(c.s1, c.s2, weights)
 		if less != c.less {
 			t.Errorf("[%s] Expected less: %t, got: %t", c.title, c.less, less)
 		}
 
+		weightsFold := WeightsFold(c.alphabet)
 		lessFold := LessFold(c.s1, c.s2, weightsFold)
 		if lessFold != c.lessFold {
-			t.Errorf("[%s] Expected less fold: %t, got: %t", c.title, c.lessFold, lessFold)
+			t.Errorf("[%s] Expected less fold: %t, got: %t (alphabet: %s)", c.title, c.lessFold, lessFold, c.alphabet)
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /*
 
-Package abcsort is a string sorting library that uses a custom,user-defined
+Package abcsort is a string sorting library that uses a custom, user-defined
 alphabet.
 
 */
