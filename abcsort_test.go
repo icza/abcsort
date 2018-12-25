@@ -25,6 +25,18 @@ func TestWeights_WeightsFold(t *testing.T) {
 			weightsFold: map[rune]int{'a': 0, 'b': 1, 'c': 2, 'A': 0, 'B': 1, 'C': 2},
 		},
 		{
+			title:       "mixed",
+			alphabet:    "aBc",
+			weights:     map[rune]int{'a': 0, 'B': 1, 'c': 2},
+			weightsFold: map[rune]int{'a': 0, 'b': 1, 'c': 2, 'A': 0, 'B': 1, 'C': 2},
+		},
+		{
+			title:       "upper",
+			alphabet:    "ABC",
+			weights:     map[rune]int{'A': 0, 'B': 1, 'C': 2},
+			weightsFold: map[rune]int{'a': 0, 'b': 1, 'c': 2, 'A': 0, 'B': 1, 'C': 2},
+		},
+		{
 			title:       "invalid",
 			alphabet:    "\xfa\xfb\xfc",
 			weights:     map[rune]int{},
