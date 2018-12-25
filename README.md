@@ -5,4 +5,4 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/icza/abcsort)](https://goreportcard.com/report/github.com/icza/abcsort)
 [![codecov](https://codecov.io/gh/icza/abcsort/branch/master/graph/badge.svg)](https://codecov.io/gh/icza/abcsort)
 
-Go sorting library using a custom alphabet
+Go string sorting library that uses a custom, user-defined alphabet.
