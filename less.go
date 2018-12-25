@@ -1,15 +1,6 @@
-/*
+// This file contains the construction of Weights and the Less function
+// implementations.
 
-Package abcsort is a string sorting library that uses a custom, user-defined
-alphabet.
-
-abcsort provides the essence of sorting: the implementation of a less() function
-required by the standard lib's sort package.
-
-Implementation does not convert the input strings into byte or rune slices, so
-performance is rather good.
-
-*/
 package abcsort
 
 import (

@@ -1,3 +1,5 @@
+// This file contains the Sorter helper type.
+
 package abcsort
 
 import "sort"
